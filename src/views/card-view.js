@@ -1,22 +1,22 @@
 import View from './view.js';
- import {html} from '../utilities.js';
+import {html} from '../utilities.js';
 
- class CardView extends View {
-   constructor() {
-     super();
+class CardView extends View {
+  constructor() {
+    super();
 
-     // this.classList.add('class1', 'class2');
-   }
+    // this.classList.add('class1', 'class2');
+  }
 
-   /**
+  /**
     * @override
     */
-   createHtml() {
-     return html`
+  createHtml() {
+    return html`
      `;
-   }
- }
+  }
+}
 
- customElements.define('card-view', CardView);
+customElements.define('card-view', CardView);
 
- export default CardView;
+export default CardView;

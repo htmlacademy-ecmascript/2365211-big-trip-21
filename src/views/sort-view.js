@@ -1,18 +1,18 @@
-port View from './view.js';
- import {html} from '../utilities.js';
+import View from './view.js';
+import {html} from '../utilities.js';
 
- class SortView extends View {
-   constructor() {
-     super();
+class SortView extends View {
+  constructor() {
+    super();
 
-     this.classList.add('trip-sort');
-   }
+    this.classList.add('trip-sort');
+  }
 
-   /**
+  /**
     * @override
     */
-   createHtml() {
-     return html`
+  createHtml() {
+    return html`
        <div class="trip-sort__item  trip-sort__item--day">
          <input id="sort-day" class="trip-sort__input  visually-hidden" type="radio" name="trip-sort" value="sort-day" checked="">
          <label class="trip-sort__btn" for="sort-day">Day</label>
@@ -38,9 +38,9 @@ port View from './view.js';
          <label class="trip-sort__btn" for="sort-offer">Offers</label>
        </div>
      `;
-   }
- }
+  }
+}
 
- customElements.define('sort-view', SortView);
+customElements.define('sort-view', SortView);
 
- export default SortView;
+export default SortView;

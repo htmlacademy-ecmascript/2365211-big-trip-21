@@ -1,18 +1,18 @@
 import View from './view.js';
- import {html} from '../utilities.js';
+import {html} from '../utilities.js';
 
- class FilterView extends View {
-   constructor() {
-     super();
+class FilterView extends View {
+  constructor() {
+    super();
 
-     this.classList.add('trip-filters');
-   }
+    this.classList.add('trip-filters');
+  }
 
-   /**
+  /**
     * @override
     */
-   createHtml() {
-     return html`
+  createHtml() {
+    return html`
        <div class="trip-filters__filter">
          <input id="filter-everything" class="trip-filters__filter-input  visually-hidden" type="radio" name="trip-filter" value="everything" checked="">
          <label class="trip-filters__filter-label" for="filter-everything">Everything</label>
@@ -33,9 +33,9 @@ import View from './view.js';
          <label class="trip-filters__filter-label" for="filter-past">Past</label>
        </div>
      `;
-   }
- }
+  }
+}
 
- customElements.define('filter-view', FilterView);
+customElements.define('filter-view', FilterView);
 
- export default FilterView;
+export default FilterView;

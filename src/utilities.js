@@ -3,20 +3,20 @@
   * @param {...any} values
   * @returns {string}
   */
- function html(strings, ...values) {
-   return strings.reduce((before, after, index) => {
-     const value = values[index - 1];
+function html(strings, ...values) {
+  return strings.reduce((before, after, index) => {
+    const value = values[index - 1];
 
-     if (value === undefined) {
-       return before + after;
-     }
+    if (value === undefined) {
+      return before + after;
+    }
 
-     if (Array.isArray(value)) {
-       return before + value.join('') + after;
-     }
+    if (Array.isArray(value)) {
+      return before + value.join('') + after;
+    }
 
-     return before + value + after;
-   });
- }
+    return before + value + after;
+  });
+}
 
- export {html};
+export {html};
