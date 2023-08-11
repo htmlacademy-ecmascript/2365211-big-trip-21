@@ -3,7 +3,7 @@ import './views/filter-view.js';
 import './views/add-button-view.js';
 import './views/sort-view.js';
 import './views/list-view.js';
-
+console.log("Hello!");
 /**
   * @type {import('./views/brief-view').default}
   */
