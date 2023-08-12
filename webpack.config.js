@@ -5,15 +5,15 @@ const HtmlPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/main.js',
   output: {
-    filename: 'bundle.[contenthash].js', //имя бандла
-    path: path.resolve(__dirname, 'build'), //Директория для файлов сборки
+    filename: 'bundle.[contenthash].js',
+    path: path.resolve(__dirname, 'build'),
     clean: true,
   },
-  devtool: 'source-map', // Генерируем карту исходного кода
-  plugins: [ // Подключаем плагины
+  devtool: 'source-map',
+  plugins: [
     new HtmlPlugin({
       template: 'public/index.html',
-  }),
+    }),
     new CopyPlugin({
       patterns: [
         {
@@ -37,6 +37,10 @@ module.exports = {
           },
         },
       },
-    ]
-  }
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      },
+    ],
+  },
 };
