@@ -1,14 +1,14 @@
 class View extends HTMLElement {
 
   render() {
-    this.innerHTML = this.createHTML();
+    this.innerHTML = this.createHtml();
   }
   /**
  * @abstract
  * @returns {string}
  */
 
-  createHTML() {
+  createHtml() {
     return '';
   }
 }
