@@ -1,0 +1,116 @@
+[
+  {
+    "id": "fba9b9b6-b0e2-45ab-9d16-176e1f06f391",
+    "name": "Sochi"
+  },
+  {
+    "id": "a744db97-655b-463a-ac2e-f4c1eb9b71ec",
+    "name": "Amsterdam"
+  },
+  {
+    "id": "91d98c5b-3d4c-4eb4-a44a-a46af989a7a4",
+    "description": "Rome - famous for its crowded street markets with the best street food in Asia",
+    "name": "Rome",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/13.jpg",
+        "description": "Rome middle-eastern paradise"
+      }
+    ]
+  },
+  {
+    "id": "aca57237-0a65-404a-9f6b-cdbc95b3b498",
+    "description": "Den Haag - with an embankment of a mighty river as a centre of attraction",
+    "name": "Den Haag",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/15.jpg",
+        "description": "Den Haag is a beautiful city"
+      }
+    ]
+  },
+  {
+    "id": "ee688069-60fa-48de-ab95-01a68d1b92b5",
+    "description": "Barcelona - famous for its crowded street markets with the best street food in Asia",
+    "name": "Barcelona",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/11.jpg",
+        "description": "Barcelona famous for its crowded street markets with the best street food in Asia"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/1.jpg",
+        "description": "Barcelona with a beautiful old town"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/13.jpg",
+        "description": "Barcelona for those who value comfort and coziness"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/12.jpg",
+        "description": "Barcelona full of of cozy canteens where you can try the best coffee in the Middle East"
+      }
+    ]
+  },
+  {
+    "id": "bbffdeed-2ba6-448a-8e98-e4acc545cd67",
+    "description": "Tokio - full of of cozy canteens where you can try the best coffee in the Middle East",
+    "name": "Tokio",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/12.jpg",
+        "description": "Tokio in a middle of Europe"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/7.jpg",
+        "description": "Tokio with crowded streets"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/9.jpg",
+        "description": "Tokio with an embankment of a mighty river as a centre of attraction"
+      }
+    ]
+  },
+  {
+    "id": "6e839f09-0288-4b79-9173-a1cbe53d8f31",
+    "description": "Madrid - for those who value comfort and coziness",
+    "name": "Madrid",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/2.jpg",
+        "description": "Madrid a true asian pearl"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/18.jpg",
+        "description": "Madrid a true asian pearl"
+      }
+    ]
+  },
+  {
+    "id": "1859a983-ed30-4936-8975-c7e4926c422e",
+    "description": "Milan - with a beautiful old town",
+    "name": "Milan",
+    "pictures": []
+  },
+  {
+    "id": "ea2eb0cd-96f7-415b-8fc8-2d5545130ec9",
+    "description": "Venice - for those who value comfort and coziness",
+    "name": "Venice",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/13.jpg",
+        "description": "Venice famous for its crowded street markets with the best street food in Asia"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/18.jpg",
+        "description": "Venice full of of cozy canteens where you can try the best coffee in the Middle East"
+      }
+    ]
+  },
+  {
+    "id": "d32368d8-b24b-4860-9379-e251dea14fe2",
+    "description": "Hiroshima - full of of cozy canteens where you can try the best coffee in the Middle East",
+    "name": "Hiroshima",
+    "pictures": []
+  }
+]

@@ -1,0 +1,206 @@
+[
+  {
+    "type": "taxi",
+    "offers": [
+      {
+        "id": "70e408fd-b43b-46aa-8213-a9707516eead",
+        "title": "Upgrade to a business class",
+        "price": 118
+      },
+      {
+        "id": "3cd7f85a-919e-4196-9fa2-813a71f46376",
+        "title": "Choose the radio station",
+        "price": 84
+      },
+      {
+        "id": "894ef0f6-9f8f-4f81-a370-ace5dcfc90d8",
+        "title": "Choose temperature",
+        "price": 54
+      },
+      {
+        "id": "89b1fd8f-1479-49bd-9da0-9afea14aaf5a",
+        "title": "Drive quickly, I'm in a hurry",
+        "price": 173
+      },
+      {
+        "id": "efe37af4-6c9f-4492-86d9-e75e26a173eb",
+        "title": "Drive slowly",
+        "price": 50
+      }
+    ]
+  },
+  {
+    "type": "bus",
+    "offers": [
+      {
+        "id": "ea000fe0-1a4d-4392-89f2-16c2281d0024",
+        "title": "Infotainment system",
+        "price": 54
+      },
+      {
+        "id": "83021be3-1974-4aa9-b9e1-ac225393838b",
+        "title": "Order meal",
+        "price": 96
+      },
+      {
+        "id": "bde753aa-c25d-42fd-bed8-902604e6a348",
+        "title": "Choose seats",
+        "price": 133
+      }
+    ]
+  },
+  {
+    "type": "train",
+    "offers": [
+      {
+        "id": "6fe77226-9586-40c4-ac0b-2d0ee0c5d0d5",
+        "title": "Book a taxi at the arrival point",
+        "price": 149
+      },
+      {
+        "id": "838ff1ca-0e90-471c-a789-de1e2f8a87c7",
+        "title": "Order a breakfast",
+        "price": 35
+      },
+      {
+        "id": "f2926bf2-02a8-431b-a55a-882dd1a83bcc",
+        "title": "Wake up at a certain time",
+        "price": 51
+      }
+    ]
+  },
+  {
+    "type": "flight",
+    "offers": [
+      {
+        "id": "a5abbe23-0738-48c8-b585-f4a60adc7569",
+        "title": "Choose meal",
+        "price": 175
+      },
+      {
+        "id": "e6ce6b14-da59-47a4-8c68-fffcc7ec11fc",
+        "title": "Choose seats",
+        "price": 179
+      },
+      {
+        "id": "649c324e-1b5a-4aca-ba97-50435031b19e",
+        "title": "Upgrade to comfort class",
+        "price": 161
+      },
+      {
+        "id": "a3699de6-6673-4cb1-a794-490dcb813cd7",
+        "title": "Upgrade to business class",
+        "price": 145
+      },
+      {
+        "id": "257324ed-0765-4e67-8411-d4f3305acbae",
+        "title": "Add luggage",
+        "price": 55
+      },
+      {
+        "id": "57589fa9-c4f7-4c4e-889b-f532324c9bf7",
+        "title": "Business lounge",
+        "price": 92
+      }
+    ]
+  },
+  {
+    "type": "check-in",
+    "offers": [
+      {
+        "id": "e0be39fd-bce4-4354-9055-67d4e55f7912",
+        "title": "Choose the time of check-in",
+        "price": 192
+      },
+      {
+        "id": "5e30b3f1-db8f-49eb-a8e6-3a731c72ad75",
+        "title": "Choose the time of check-out",
+        "price": 151
+      },
+      {
+        "id": "a078c58c-fa56-4096-bd6f-beb6045a8876",
+        "title": "Add breakfast",
+        "price": 105
+      },
+      {
+        "id": "4db1cef6-efbf-4df7-acad-b4f5916914e4",
+        "title": "Laundry",
+        "price": 185
+      },
+      {
+        "id": "036e530b-6c4c-4d80-b462-8402440c6de4",
+        "title": "Order a meal from the restaurant",
+        "price": 74
+      }
+    ]
+  },
+  {
+    "type": "sightseeing",
+    "offers": []
+  },
+  {
+    "type": "ship",
+    "offers": [
+      {
+        "id": "1c411d14-3d30-468c-987b-3ac8ecaa8556",
+        "title": "Choose meal",
+        "price": 111
+      },
+      {
+        "id": "6bca2430-6337-4016-b611-6a870eb4b8d5",
+        "title": "Choose seats",
+        "price": 161
+      },
+      {
+        "id": "4a3d8aed-3027-40c3-9a63-8be1d37e3d52",
+        "title": "Upgrade to comfort class",
+        "price": 131
+      },
+      {
+        "id": "c8c35e19-82ed-4a3f-8d2f-71d37c47e51d",
+        "title": "Upgrade to business class",
+        "price": 193
+      },
+      {
+        "id": "df9295b4-cbfb-44c8-8182-03302fadf990",
+        "title": "Add luggage",
+        "price": 57
+      },
+      {
+        "id": "1c3d6a99-5010-432a-ad59-5e50427b7559",
+        "title": "Business lounge",
+        "price": 102
+      }
+    ]
+  },
+  {
+    "type": "drive",
+    "offers": [
+      {
+        "id": "3a76e629-3df4-41d9-a3d1-bd97917efe21",
+        "title": "With automatic transmission",
+        "price": 32
+      },
+      {
+        "id": "c94a770c-fae7-4e9e-921a-729c92dd7f81",
+        "title": "With air conditioning",
+        "price": 191
+      }
+    ]
+  },
+  {
+    "type": "restaurant",
+    "offers": [
+      {
+        "id": "34f1cfed-e882-4dd2-aae5-60c523891995",
+        "title": "Choose live music",
+        "price": 159
+      },
+      {
+        "id": "de2bd97d-2055-48af-85c8-cc4beec25ac2",
+        "title": "Choose VIP area",
+        "price": 123
+      }
+    ]
+  }
+]
