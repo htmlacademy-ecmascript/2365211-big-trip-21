@@ -1,9 +1,7 @@
-.trip-list {
-  display: block;
+.event__type-label::first-letter {
+  text-transform: uppercase;
 }
 
-.trip-list__item {
-  display: block;
-  margin-bottom: 54px;
-  margin-left: auto;
+.event__photos-container {
+  overflow-x: auto;
 }
