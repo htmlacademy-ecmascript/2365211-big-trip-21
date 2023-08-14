@@ -51,10 +51,10 @@ class ListPresenter extends Presenter {
         })),
 
         isFavorite: point.isFavorite,
-        isEditable: index === 1
+        isEditable: index === 5
       };
     });
-console.table(items);
+console.table(points);
 
     this.view.setState({items});
   }
