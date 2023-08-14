@@ -24,7 +24,7 @@ class ListPresenter extends Presenter {
     const points = this.model.getPoints();
     const destinations = this.model.getDestinations();
     const offerGroups = this.model.getOfferGroups();
-
+    console.log(points, destinations, offerGroups);
     const items = points.map((point, index) => {
       const {offers} = offerGroups.find((group) => group.type === point.type);
 
@@ -54,7 +54,7 @@ class ListPresenter extends Presenter {
         isEditable: index === 5
       };
     });
-console.table(points);
+console.table(items);
 
     this.view.setState({items});
   }
