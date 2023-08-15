@@ -54,7 +54,7 @@ class ListPresenter extends Presenter {
         isEditable: index === 5
       };
     });
-//console.table(points);
+    // console.table(points);
 
     this.view.setState({items});
   }

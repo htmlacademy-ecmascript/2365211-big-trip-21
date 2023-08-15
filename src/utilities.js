@@ -4,6 +4,14 @@ import durationPlugin from 'dayjs/plugin/duration.js';
 dayjs.extend(durationPlugin);
 
 /**
+ * @param {dayjs.ConfigType} value
+ * @returns {string}
+ */
+function formatDate(value) {
+  return dayjs(value).format('MMM D');
+}
+
+/**
  *
  * @param {dayjs.ConfigType} value
  * @returns {string}
@@ -12,43 +20,42 @@ dayjs.extend(durationPlugin);
 function formatTime(value) {
   return dayjs(value).format('HH:mm');
 }
+
 /**
- *
- * @param {dayjs.ConfigType} value
+ * @param {dayjs.ConfigType} valueFrom
+ * @param {dayjs.ConfigType} valueTo
  * @returns {string}
  */
-
-function formatDate(value) {
-  return dayjs(value).format('MMM D')
-}
 
 function formatDuration(valueFrom, valueTo) {
   const ms = dayjs(valueTo).diff(valueFrom);
   const duration = dayjs.duration(ms);
 
   if (duration.days()) {
-    const ms = dayjs(valueTo).diff(valueFrom);
-    return duration.format('DD[d] HH[h] mm[m]')
+    return duration.format('DD[d] HH[h] mm[m]');
   }
+
   if (duration.hours()) {
-    return duration.format('HH[h] mm[m]')
+    return duration.format('HH[h] mm[m]');
   }
-  return duration.format('mm[m]')
+
+  return duration.format('mm[m]');
 }
 
+console.log(formatDuration('2023-08-15T13:00Z', '2023-08-15T14:00Z'));
 /**
- *
  * @param {number} value
  * @returns {string}
  */
-
 function formatNumber(value) {
-   return value.toLocaleString();
+  return value.toLocaleString('en');
 }
 
-
-console.log(formatDate('2023-03-18'))
-console.log(formatTime('2023-03-18T13:00Z', '2023-03-18T13:05Z'))
+/**
+* @param {TemplateStringsArray} strings
+* @param {...any} values
+* @returns {string}
+*/
 
 function html(strings, ...values) {
   return strings.reduce((before, after, index) => {
@@ -67,7 +74,8 @@ function html(strings, ...values) {
 }
 
 export {html,
-formatDate,
-formatTime,
-formatDuration,
+  formatDate,
+  formatTime,
+  formatDuration,
+  formatNumber
 };
