@@ -31,6 +31,7 @@ class AppModel extends Model {
     // TODO: Получение данных с сервера
     // @ts-ignore
     this.points = points;
+    // @ts-ignore
     this.destinations = destinations;
     // @ts-ignore
     this.offerGroups = offerGroups;

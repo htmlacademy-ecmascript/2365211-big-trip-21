@@ -1,3 +1,20 @@
+import dayjs from 'dayjs';
+/**
+ *
+ * @param {dayjs.ConfigType} value
+ * @returns {string}
+ */
+
+function formatTime(value) {
+  return dayjs(value).format('HH:mm');
+}
+
+function formatDate(value) {
+  return dayjs(value).format('MMM D');
+}
+console.log(formatDate('2023-03-18'))
+console.log(formatTime('2023-03-18T13:00Z'))
+
 /*
   * @param {TemplateStringsArray} strings
   * @param {...any} values
@@ -19,4 +36,8 @@ function html(strings, ...values) {
   });
 }
 
-export {html};
+export {html,
+formatDate,
+formatTime,
+html,
+};
