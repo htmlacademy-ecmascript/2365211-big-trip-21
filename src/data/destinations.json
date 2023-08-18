@@ -1,0 +1,159 @@
+[
+  {
+    "id": "6189e06a-4863-44a9-84f3-5b10934f3f4b",
+    "description": "Tokio - famous for its crowded street markets with the best street food in Asia",
+    "name": "Tokio",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/15.jpg",
+        "description": "Tokio a true asian pearl"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/12.jpg",
+        "description": "Tokio with a beautiful old town"
+      }
+    ]
+  },
+  {
+    "id": "c5db5b2d-8587-46c3-9a19-f98ac56e992e",
+    "description": "Milan - a true asian pearl",
+    "name": "Milan",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/3.jpg",
+        "description": "Milan a perfect place to stay with a family"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/4.jpg",
+        "description": "Milan a true asian pearl"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/18.jpg",
+        "description": "Milan middle-eastern paradise"
+      }
+    ]
+  },
+  {
+    "id": "5c8f9469-26fb-44b3-8294-0e11da977b96",
+    "description": "Naples - middle-eastern paradise",
+    "name": "Naples",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/3.jpg",
+        "description": "Naples with a beautiful old town"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/5.jpg",
+        "description": "Naples is a beautiful city"
+      }
+    ]
+  },
+  {
+    "id": "79df0484-35f6-478b-acff-e84751c64c1d",
+    "description": "Den Haag - with an embankment of a mighty river as a centre of attraction",
+    "name": "Den Haag",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/9.jpg",
+        "description": "Den Haag with a beautiful old town"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/18.jpg",
+        "description": "Den Haag in a middle of Europe"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/16.jpg",
+        "description": "Den Haag is a beautiful city"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/2.jpg",
+        "description": "Den Haag a true asian pearl"
+      }
+    ]
+  },
+  {
+    "id": "9a997df5-3226-4ce3-9e8d-23bb5802db6e",
+    "description": "Den Haag - with an embankment of a mighty river as a centre of attraction",
+    "name": "Den Haag",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/19.jpg",
+        "description": "Den Haag a perfect place to stay with a family"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/3.jpg",
+        "description": "Den Haag with crowded streets"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/2.jpg",
+        "description": "Den Haag is a beautiful city"
+      }
+    ]
+  },
+  {
+    "id": "f771ad56-14a5-4145-ba1b-5957d4fb35ee",
+    "name": "Tokio"
+  },
+  {
+    "id": "2705c7da-8440-4c48-8945-cdcae784371c",
+    "name": "Milan"
+  },
+  {
+    "id": "4e80008d-ca58-434e-b15d-b0bbf1dd4fd7",
+    "name": "Rome"
+  },
+  {
+    "id": "f67e67a7-1f43-4b56-b0df-799c7e59a322",
+    "description": "Kioto - in a middle of Europe",
+    "name": "Kioto",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/13.jpg",
+        "description": "Kioto middle-eastern paradise"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/4.jpg",
+        "description": "Kioto in a middle of Europe"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/15.jpg",
+        "description": "Kioto middle-eastern paradise"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/5.jpg",
+        "description": "Kioto with crowded streets"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/17.jpg",
+        "description": "Kioto is a beautiful city"
+      }
+    ]
+  },
+  {
+    "id": "9e44e4bc-aafa-4bbb-b953-7f9ef2b81073",
+    "description": "Nagasaki - middle-eastern paradise",
+    "name": "Nagasaki",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/7.jpg",
+        "description": "Nagasaki with an embankment of a mighty river as a centre of attraction"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/17.jpg",
+        "description": "Nagasaki with crowded streets"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/2.jpg",
+        "description": "Nagasaki with an embankment of a mighty river as a centre of attraction"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/9.jpg",
+        "description": "Nagasaki in a middle of Europe"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/7.jpg",
+        "description": "Nagasaki a perfect place to stay with a family"
+      }
+    ]
+  }
+]
