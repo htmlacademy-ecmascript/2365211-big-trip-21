@@ -39,7 +39,7 @@ class CardView extends View {
 
     return html`
     <time class="event__date" datetime="${dateFrom}">${formatDate(dateFrom)}</time>
-      </time>
+
     `;
   }
 
