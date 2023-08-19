@@ -1,14 +1,7 @@
 import View from './view.js';
 import {html} from '../utilities.js';
 
-class FilterView extends View {
-  constructor() {
-    super();
-
-    this.classList.add('trip-filters');
-  }
-
- /**
+  /**
   * @typedef {{
   *   value: FilterType
   *   isSelected: boolean
@@ -21,6 +14,13 @@ class FilterView extends View {
   *
   * @extends {View<State>}
   */
+  class FilterView extends View {
+    constructor() {
+      super();
+
+      this.classList.add('trip-filters');
+    }
+
   createHtml() {
     return html`
        <div class="trip-filters__filter">
