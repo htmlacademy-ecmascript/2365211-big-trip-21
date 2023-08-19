@@ -8,9 +8,19 @@ class FilterView extends View {
     this.classList.add('trip-filters');
   }
 
-  /**
-    * @override
-    */
+ /**
+  * @typedef {{
+  *   value: FilterType
+  *   isSelected: boolean
+  *   isDisabled: boolean
+  * }} ItemState
+  *
+  * @typedef {{
+  *  items: Array<ItemState>
+  * }} State
+  *
+  * @extends {View<State>}
+  */
   createHtml() {
     return html`
        <div class="trip-filters__filter">
