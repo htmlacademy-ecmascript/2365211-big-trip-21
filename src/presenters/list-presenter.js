@@ -14,6 +14,8 @@ class ListPresenter extends Presenter {
     super(...rest);
     this.view.addEventListener('open', this.onViewOpen.bind(this));
     this.view.addEventListener('close', this.onViewClose.bind(this));
+    this.view.addEventListener('favorite', this.onViewFavorite.bind(this));
+
   }
 
   /**
@@ -24,7 +26,7 @@ class ListPresenter extends Presenter {
     const points = this.model.getPoints();
     const destinations = this.model.getDestinations();
     const offerGroups = this.model.getOfferGroups();
-    console.log(points, destinations, offerGroups);
+    // console.log(points, destinations, offerGroups);
 
     const items = points.map((point) => {
       const {offers} = offerGroups.find((group) => group.type === point.type);
@@ -79,6 +81,19 @@ class ListPresenter extends Presenter {
     delete params.edit;
 
     this.navigation.setParams(params);
+  }
+
+  /**
+   * @param {CustomEvent & {
+   *  target: import('../views/card-view').default
+   * }} event
+   */
+  onViewFavorite(event){
+    const card = event.target;
+    card.state.isFavorite = !card.state.isFavorite;
+    //console.table(card.state);
+    //TODO: Обновить модель
+card.render();
   }
 }
 
