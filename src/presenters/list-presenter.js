@@ -62,6 +62,28 @@ class ListPresenter extends Presenter {
     this.view.setState({items});
   }
 
+/**
+   * @param {import('../views/list-view').ItemState} state
+   * @returns {import('../models/point-model').default}
+   */
+createPoint(state) {
+  const point = this.model.createPoint();
+
+
+  Object.assign(point, {
+    id: state.id,
+    type: state.types.find((type) => type.isSelected).value,
+    destinationId: state.destinations.find((destination) => destination.isSelected)?.id,
+    dateFrom: state.dateFrom,
+    dateTo: state.dateTo,
+    basePrice: state.basePrice,
+    offerIds: state.offers.filter((offer) => offer.isSelected).map((offer) => offer.id),
+    isFavorite: state.isFavorite
+  });
+
+  return point;
+}
+
   /**
    * @param {CustomEvent & {
   *  target: import('../views/card-view').default
@@ -91,7 +113,7 @@ class ListPresenter extends Presenter {
   onViewFavorite(event){
     const card = event.target;
     card.state.isFavorite = !card.state.isFavorite;
-    //console.table(card.state);
+    console.table(card.state);
     //TODO: Обновить модель
     console.log(this.model.createPoint())
     card.render();
