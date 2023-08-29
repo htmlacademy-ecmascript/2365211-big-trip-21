@@ -62,27 +62,26 @@ class ListPresenter extends Presenter {
     this.view.setState({items});
   }
 
-/**
+  /**
    * @param {import('../views/list-view').ItemState} state
    * @returns {import('../models/point-model').default}
    */
-createPoint(state) {
-  const point = this.model.createPoint();
+  createPoint(state) {
+    const point = this.model.createPoint();
 
+    Object.assign(point, {
+      id: state.id,
+      type: state.types.find((type) => type.isSelected).value,
+      destinationId: state.destinations.find((destination) => destination.isSelected)?.id,
+      dateFrom: state.dateFrom,
+      dateTo: state.dateTo,
+      basePrice: state.basePrice,
+      offerIds: state.offers.filter((offer) => offer.isSelected).map((offer) => offer.id),
+      isFavorite: state.isFavorite
+    });
 
-  Object.assign(point, {
-    id: state.id,
-    type: state.types.find((type) => type.isSelected).value,
-    destinationId: state.destinations.find((destination) => destination.isSelected)?.id,
-    dateFrom: state.dateFrom,
-    dateTo: state.dateTo,
-    basePrice: state.basePrice,
-    offerIds: state.offers.filter((offer) => offer.isSelected).map((offer) => offer.id),
-    isFavorite: state.isFavorite
-  });
-
-  return point;
-}
+    return point;
+  }
 
   /**
    * @param {CustomEvent & {
@@ -110,12 +109,14 @@ createPoint(state) {
    *  target: import('../views/card-view').default
    * }} event
    */
-  onViewFavorite(event){
+  async onViewFavorite(event){
     const card = event.target;
     card.state.isFavorite = !card.state.isFavorite;
-    console.table(card.state);
+    //console.table(card.state);
     //TODO: Обновить модель
-    console.log(this.model.createPoint())
+
+    await this.model.updatePoint(this.model.createPoint());
+    console.log(this.model.createPoint());
     card.render();
   }
 }
