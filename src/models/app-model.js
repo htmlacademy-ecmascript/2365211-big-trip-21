@@ -59,9 +59,9 @@ class AppModel extends Model {
   async updatePoint(model) {
   //TODO Обновить данные на сервере
     const data = model.toJSON();
-    console.log(data);
+    //console.log(model, data);
     const index = this.points.findIndex((point) => point.id === data.id);
-
+    //console.log(this.points.at(index));
     this.points.splice(index, 1, data);
   }
 
