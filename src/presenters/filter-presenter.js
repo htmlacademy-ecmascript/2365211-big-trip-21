@@ -31,12 +31,12 @@ class FilterPresenter extends Presenter {
     }));
 
     //this.view.render();
-    console.log(items);
+    // console.log(items);
     this.view.setState({items});
   }
 
   onViewChange(event) {
-    console.log(event.target.value);
+     console.log(event.target.value);
 
     // const params = this.navigation.getParams();
     // params.filter = event.target.state.value;
