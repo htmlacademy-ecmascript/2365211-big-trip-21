@@ -93,7 +93,8 @@ class ListPresenter extends Presenter {
     card.state.isFavorite = !card.state.isFavorite;
     //console.table(card.state);
     //TODO: Обновить модель
-card.render();
+    console.log(this.model.createPoint())
+    card.render();
   }
 }
 

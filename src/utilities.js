@@ -42,7 +42,7 @@ function formatDuration(valueFrom, valueTo) {
   return duration.format('mm[m]');
 }
 
-console.log(formatDuration('2023-07-15T13:00Z', '2023-08-15T14:00Z'));
+//console.log(formatDuration('2023-07-15T13:00Z', '2023-08-15T14:00Z'));
 /**
  * @param {number} value
  * @returns {string}

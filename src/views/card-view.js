@@ -169,7 +169,7 @@ class CardView extends View {
       return;
     }
     if (event.target.closest('.event__favorite-btn')) {
-      this.dispatch('open');
+      this.dispatch('favorite');
     }
   }
 }
