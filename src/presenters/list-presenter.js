@@ -111,12 +111,11 @@ class ListPresenter extends Presenter {
    */
   async onViewFavorite(event){
     const card = event.target;
+
     card.state.isFavorite = !card.state.isFavorite;
     //console.table(card.state);
-    //TODO: Обновить модель
-
-    await this.model.updatePoint(this.model.createPoint());
-    console.log(this.model.createPoint());
+    await this.model.updatePoint(this.createPoint(card.state));
+    //console.log(this.createPoint(card.state));
     card.render();
   }
 }
