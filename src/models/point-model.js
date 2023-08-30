@@ -16,6 +16,14 @@ class PointModel extends Model {
     this.offerIds = structuredClone(point.offers);
     this.type = point.type;
   }
+/**
+ *  @type {number}
+ */
+
+
+  get dateFromInMs() {
+    return Date.parse(this.dateFrom);
+  }
 
   /**
    * @returns {Point}
