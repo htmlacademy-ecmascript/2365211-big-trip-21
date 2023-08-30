@@ -46,7 +46,6 @@ class AppModel extends Model {
     this.destinations = destinations;
     // @ts-ignore
     this.offerGroups = offerGroups;
-    );
   }
 
   /**

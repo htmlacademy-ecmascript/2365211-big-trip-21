@@ -17,7 +17,7 @@ class PointModel extends Model {
     this.type = point.type;
   }
 
-/**
+  /**
  *  @type {number}
  */
   get dateFromInMs() {
