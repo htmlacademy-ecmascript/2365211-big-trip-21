@@ -46,6 +46,9 @@ class AppModel extends Model {
     this.destinations = destinations;
     // @ts-ignore
     this.offerGroups = offerGroups;
+    // console.table(
+    //   this.getPoints({sort: 'price'})
+    //);
   }
 
   /**

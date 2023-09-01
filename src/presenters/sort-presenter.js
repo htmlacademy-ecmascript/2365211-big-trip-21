@@ -23,10 +23,12 @@ class SortPresenter extends Presenter {
      * @type {Array<SortType>}
      */
     const values = ['day', 'event', 'time', 'price', 'offers'];
+
     const {sort = 'day'} = this.navigation.getParams();
+
     const items = values.map((value) => ({
       value,
-      isSelected: value === sort,
+      isSelected: value === 'day',
       isDisabled: value === 'event' || value === 'offers'
     }));
     this.view.setState({items});
