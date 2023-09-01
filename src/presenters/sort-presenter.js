@@ -28,7 +28,7 @@ class SortPresenter extends Presenter {
 
     const items = values.map((value) => ({
       value,
-      isSelected: value === 'day',
+      isSelected: value === sort,
       isDisabled: value === 'event' || value === 'offers'
     }));
     this.view.setState({items});
@@ -42,7 +42,7 @@ class SortPresenter extends Presenter {
  * }} event
  */
   onViewChange(event) {
-    console.log(event.target.value);
+    //console.log(event.target.value);
 
     const params = this.navigation.getParams();
 
