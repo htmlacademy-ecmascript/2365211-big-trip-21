@@ -130,6 +130,13 @@ class ListPresenter extends Presenter {
     const input = event.detail;
     console.log(input.name);
     if (input.name === 'event-type'){
+      const offerGroups = this.model.getOfferGroups();
+      const {offers} = offerGroups.find((group) => group.type === input.value);
+      editor.state.offers = offers.map((offer) => ({
+        ...offer,
+        isSelected: false
+      }));
+
       //editor.state.offers.find
       editor.state.types.forEach((type) => {
         type.isSelected = type.value === input.value;
