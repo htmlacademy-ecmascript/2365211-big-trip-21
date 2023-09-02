@@ -11,6 +11,7 @@ class EditorView extends View {
   constructor() {
     super();
     this.addEventListener('click', this.onClick);
+    this.addEventListener('change', this.onChange);
     // this.classList.add('class1', 'class2');
   }
 
@@ -267,11 +268,20 @@ class EditorView extends View {
   *  target: Element
   * }} event
   */
- onClick(event) {
-   if (event.target.closest('.event__rollup-btn')) {
-     this.dispatch('close');
-   }
- }
+  onClick(event) {
+    if (event.target.closest('.event__rollup-btn')) {
+      this.dispatch('close');
+    }
+  }
+
+  /**
+   * @param {Event & {
+  *  target: HTMLInputElement
+  * }} event
+  */
+  onChange(event) {
+    this.dispatch('edit', event.target);
+  }
 
   /**
    * @param {KeyboardEvent} event
