@@ -12,6 +12,7 @@ class EditorView extends View {
     super();
     this.addEventListener('click', this.onClick);
     this.addEventListener('change', this.onChange);
+
     // this.classList.add('class1', 'class2');
   }
 
