@@ -36,7 +36,7 @@ class FilterPresenter extends Presenter {
   }
 
   onViewChange(event) {
-     console.log(event.target.value);
+    console.log(event.target.value);
 
     // const params = this.navigation.getParams();
     // params.filter = event.target.state.value;

@@ -35,7 +35,7 @@ class SortView extends View {
         name="trip-sort"
         value="${item.value}"
         ${item.isSelected ? 'checked' : ''}
-        ${item.isDisabled ? 'checked' : ''}>
+        ${item.isDisabled ? 'disabled' : ''}>
          <label
         class="trip-sort__btn"
         for="sort-${item.value}">
