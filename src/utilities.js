@@ -19,7 +19,7 @@ function createCalendars(inputFrom, inputTo) {
     calendarFrom.destroy();
     calendarTo.destroy();
 
-  }
+  };
 }
 
 /**
