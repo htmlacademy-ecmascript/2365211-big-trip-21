@@ -28,18 +28,18 @@ class SortView extends View {
     return html`
     ${this.state.items.map((item) => html`
        <div class="trip-sort__item  trip-sort__item--${item.value}">
-         <input
-         id="sort-${item.value}"
-         class="trip-sort__input  visually-hidden"
-        type="radio"
-        name="trip-sort"
-        value="${item.value}"
-        ${item.isSelected ? 'checked' : ''}
-        ${item.isDisabled ? 'disabled' : ''}>
-         <label
-        class="trip-sort__btn"
-        for="sort-${item.value}">
-        ${item.value}
+        <input
+          id="sort-${item.value}"
+          class="trip-sort__input  visually-hidden"
+          type="radio"
+          name="trip-sort"
+          value="${item.value}"
+          ${item.isSelected ? 'checked' : ''}
+          ${item.isDisabled ? 'disabled' : ''}>
+        <label
+          class="trip-sort__btn"
+          for="sort-${item.value}">
+          ${item.value}
         </label>
        </div>
        `)}
