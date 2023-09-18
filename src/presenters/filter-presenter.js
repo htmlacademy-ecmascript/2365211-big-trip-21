@@ -24,10 +24,12 @@ class FilterPresenter extends Presenter {
      * @type {Array<FilterType>}
      */
     const values = ['everything', 'future', 'present', 'past'];
+    const {filter = 'everything'} = this.navigation.getParams();
+
     const items = values.map((value) => ({
       value,
-      isSelected: value === 'past',
-      isDisabled: value === 'future'
+      isSelected: value === filter,
+      isDisabled: false
     }));
 
     //this.view.render();
@@ -35,14 +37,17 @@ class FilterPresenter extends Presenter {
     this.view.setState({items});
   }
 
+  /**
+   * @param {Event & {
+*  target: HTMLInputElement & {
+  *    value: FilterType
+  *  }
+  * }} event
+  */
   onViewChange(event) {
-    console.log(event.target.value);
-
-    // const params = this.navigation.getParams();
-    // params.filter = event.target.state.value;
-    // this.navigation.setParams(params);
+    this.navigation.setParams({
+      filter: event.target.value
+    });
   }
-
 }
-
 export default FilterPresenter;

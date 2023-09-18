@@ -76,7 +76,6 @@ class AppModel extends Model {
     const defaultSort = this.sortCallBacks.day;
     const sort = this.sortCallBacks[options.sort] ?? defaultSort;
 
-    return this.points.map(this.createPoint).sort(sort);
     return this.points.map(this.createPoint).filter(filter).sort(sort);
   }
 
