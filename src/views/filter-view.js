@@ -34,8 +34,9 @@ class FilterView extends View {
             type="radio"
             name="trip-filter"
             value="${item.value}"
-            checked="${item.isSelected ? 'checked' : ''}"
-            checked="${item.isDisabled ? 'checked' : ''}" >
+            ${item.isSelected ? 'checked' : ''}
+            ${item.isDisabled ? 'disabled' : ''} >
+
           <label
             class="trip-filters__filter-label"
             for="filter-${item.value}">

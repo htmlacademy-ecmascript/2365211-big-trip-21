@@ -62,7 +62,6 @@ class AppModel extends Model {
   }
 
   /**
-   * @param {{sort?: SortType}} options
    * @param {{
   *  filter?: FilterType
   *  sort?: SortType
