@@ -1,6 +1,13 @@
 import View from './view.js';
 import {html} from '../utilities.js';
 
+/**
+ * @typedef {{
+*  message: string
+* }} State
+*
+* @extends {View<State>}
+*/
 class PlaceholderView extends View {
   /**
    * @override

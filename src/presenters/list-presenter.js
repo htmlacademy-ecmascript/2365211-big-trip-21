@@ -177,7 +177,7 @@ class ListPresenter extends Presenter {
           return true;
         }
       });
-      console.log(editor.state.offers);
+      // console.log(editor.state.offers);
 
     }
   }
