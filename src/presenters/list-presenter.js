@@ -128,7 +128,7 @@ class ListPresenter extends Presenter {
   onViewEdit(event) {
     const editor = event.target;
     const input = event.detail;
-    console.log(input.name);
+    //console.log(input.name);
     if (input.name === 'event-type'){
       const offerGroups = this.model.getOfferGroups();
       const {offers} = offerGroups.find((group) => group.type === input.value);
@@ -146,16 +146,29 @@ class ListPresenter extends Presenter {
     }
 
     if (input.name === 'event-destination'){
-      console.log(editor.state.destinations);
+      // console.log(editor.state.destinations);
       editor.state.destinations.forEach((destination) => {
         destination.isSelected = destination.name === input.value;
       });
 
       editor.render();
+      return;
+    }
+    if (input.name === 'event-start-time'){
+      editor.state.dateFrom = input.value;
+      return;
+    }
+
+    if (input.name === 'event-end-time'){
+      editor.state.dateTo = input.value;
+      return;
+    }
+
+    if (input.name === 'event-price'){
+      editor.state.basePrice = Number(input.value);
     }
 
   }
-
 }
 
 export default ListPresenter;
