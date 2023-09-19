@@ -16,6 +16,8 @@ class EditorView extends View {
     this.destroyCalendars = null;
     this.addEventListener('click', this.onClick);
     this.addEventListener('change', this.onChange);
+    this.addEventListener('submit', this.onSubmit);
+
 
     // this.classList.add('class1', 'class2');
   }
@@ -302,6 +304,14 @@ class EditorView extends View {
   */
   onChange(event) {
     this.dispatch('edit', event.target);
+  }
+
+  /**
+   * @param {SubmitEvent} event
+ */
+  onSubmit(event) {
+    event.preventDefault();
+    this.dispatch('save');
   }
 
   /**
