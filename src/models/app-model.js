@@ -24,6 +24,16 @@ class AppModel extends Model {
     this.offerGroups = [];
 
     /**
+     * @type {Record<FilterType, (point: PointModel) => boolean>}
+     */
+    this.filterCallbacks = {
+      everything: () => true,
+      future: (point) => point.dateFromInMs > Date.now(),
+      present: (point) => point.dateFromInMs <= Date.now() && point.dateToInMs >= Date.now(),
+      past: (point) => point.dateToInMs < Date.now()
+    };
+
+    /**
      * @type {Record<SortType, (pointA: PointModel, pointB: PointModel) => number>}
      */
     this.sortCallBacks = {
@@ -52,14 +62,20 @@ class AppModel extends Model {
   }
 
   /**
-   * @param {{sort?: SortType}} options
+   * @param {{
+  *  filter?: FilterType
+  *  sort?: SortType
+  * }} options
+  *
    * @returns {Array<PointModel>}
    */
   getPoints(options = {}) {
+    const defaultFilter = this.filterCallbacks.everything;
+    const filter = this.filterCallbacks[options.filter] ?? defaultFilter;
     const defaultSort = this.sortCallBacks.day;
     const sort = this.sortCallBacks[options.sort] ?? defaultSort;
 
-    return this.points.map(this.createPoint).sort(sort);
+    return this.points.map(this.createPoint).filter(filter).sort(sort);
   }
 
   /**
@@ -74,6 +90,20 @@ class AppModel extends Model {
    * @param {PointModel} model
    * @returns {Promise<void>}
    */
+  async addPoint(model) {
+  // TODO: Добавить данные на сервере
+    const data = model.toJSON();
+
+    data.id = crypto.randomUUID();
+
+    this.points.push(data);
+  }
+
+
+  /**
+   * @param {PointModel} model
+   * @returns {Promise<void>}
+   */
   async updatePoint(model) {
   //TODO Обновить данные на сервере
     const data = model.toJSON();
@@ -81,6 +111,17 @@ class AppModel extends Model {
     const index = this.points.findIndex((point) => point.id === data.id);
     //console.log(this.points.at(index));
     this.points.splice(index, 1, data);
+  }
+
+  /**
+   * @param {string} id
+   * @returns {Promise<void>}
+   */
+  async deletePoint(id) {
+  // TODO: Удалить данные на сервере
+    const index = this.points.findIndex((point) => point.id === id);
+
+    this.points.splice(index, 1);
   }
 
   /**
