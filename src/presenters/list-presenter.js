@@ -208,9 +208,13 @@ class ListPresenter extends Presenter {
      */
   async onViewSave(event) {
     const editor = event.target;
-    await this.model.updatePoint(this.createPoint(editor.state));
-    editor.dispatch('close');
+    const point = this.createPoint(editor.state);
+
+    if (editor.state.id === 'draft') {
+      await this.model.addPoint(point);
+    } else {
+      await this.model.updatePoint(point);
+    }
   }
 }
-
 export default ListPresenter;
