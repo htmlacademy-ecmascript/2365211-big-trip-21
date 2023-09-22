@@ -133,5 +133,6 @@ export {html,
   formatTime,
   formatDuration,
   formatNumber,
-  createCalendars
+  createCalendars,
+  sanitize
 };
