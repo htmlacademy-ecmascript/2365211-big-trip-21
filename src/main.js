@@ -15,12 +15,13 @@ import SortPresenter from './presenters/sort-presenter.js';
 import ListPresenter from './presenters/list-presenter.js';
 import PlaceholderPresenter from './presenters/placeholder-presenter.js';
 
-const apiService = new ApiService({authorization: 'Basic sdf123'});
-apiService.getPoints();
-apiService.getDestinations();
-apiService.getOfferGroups();
 
-const appModel = new AppModel();
+const apiService = new ApiService({authorization: 'Basic sdf123'});
+// apiService.getPoints();
+// apiService.getDestinations();
+// apiService.getOfferGroups();
+
+const appModel = new AppModel(apiService);
 
 appModel.ready().then(() => {
   new BriefPresenter(document.querySelector('brief-view'), appModel);
