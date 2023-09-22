@@ -17,7 +17,7 @@ class ApiService extends Service {
    * @returns {Promise<Array<Point>>}
    */
   async getPoints() {
-    const response = await this.request('..points');
+    const response = await this.request('points');
 
     return response.json();
   }
