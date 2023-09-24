@@ -1,13 +1,13 @@
 import Model from './model.js';
 import PointModel from './point-model.js';
-import points from '../data/points.json';
-import destinations from '../data/destinations.json';
-import offerGroups from '../data/offers.json';
 
 class AppModel extends Model {
-  constructor() {
+  /**
+     * @param {import('../services/api-service').default} apiService
+     */
+  constructor(apiService) {
     super();
-
+    this.apiService = apiService;
     /**
      * @type {Array<Point>}
      */
@@ -49,16 +49,22 @@ class AppModel extends Model {
    * @returns {Promise<void>}
    */
   async ready() {
-    // TODO: Получение данных с сервера
-    // @ts-ignore
-    this.points = points;
-    // @ts-ignore
-    this.destinations = destinations;
-    // @ts-ignore
-    this.offerGroups = offerGroups;
-    // console.table(
-    //   this.getPoints({sort: 'price'})
-    //);
+    try {
+      const [points, destinations, offerGroups] = await Promise.all([
+        this.apiService.getPoints(),
+        this.apiService.getDestinations(),
+        this.apiService.getOfferGroups()
+      ]);
+
+      this.points = points;
+      this.destinations = destinations;
+      this.offerGroups = offerGroups;
+      this.dispatch('ready');
+
+    } catch (error) {
+      this.dispatch('error');
+      throw error;
+    }
   }
 
   /**
