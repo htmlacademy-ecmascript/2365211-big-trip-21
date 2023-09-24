@@ -57,6 +57,7 @@ class AppModel extends Model {
     this.points = points;
     this.destinations = destinations;
     this.offerGroups = offerGroups;
+    this.dispatch('ready');
     // console.table(
     //   this.getPoints({sort: 'price'})
     //);
