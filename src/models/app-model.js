@@ -49,18 +49,22 @@ class AppModel extends Model {
    * @returns {Promise<void>}
    */
   async ready() {
-    const [points, destinations, offerGroups] = await Promise.all([
-      this.apiService.getPoints(),
-      this.apiService.getDestinations(),
-      this.apiService.getOfferGroups()
-    ]);
-    this.points = points;
-    this.destinations = destinations;
-    this.offerGroups = offerGroups;
-    this.dispatch('ready');
-    // console.table(
-    //   this.getPoints({sort: 'price'})
-    //);
+    try {
+      const [points, destinations, offerGroups] = await Promise.all([
+        this.apiService.getPoints(),
+        this.apiService.getDestinations(),
+        this.apiService.getOfferGroups()
+      ]);
+
+      this.points = points;
+      this.destinations = destinations;
+      this.offerGroups = offerGroups;
+      this.dispatch('ready');
+
+    } catch (error) {
+      this.dispatch('error');
+      throw error;
+    }
   }
 
   /**
