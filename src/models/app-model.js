@@ -109,7 +109,7 @@ class AppModel extends Model {
    */
   async updatePoint(model) {
   //TODO Обновить данные на сервере
-    const data = model.toJSON();
+    const data = await this.apiService.updatePoint(model.toJSON());
     //console.log(model, data);
     const index = this.points.findIndex((point) => point.id === data.id);
     //console.log(this.points.at(index));
