@@ -51,6 +51,15 @@ class ApiService extends Service {
     return sanitize(await response.json());
   }
 
+  /**
+   * @param {string} id
+   * @returns {Promise<void>}
+   */
+  async deletePoint(id) {
+    await this.request(`points/${id}`, {
+      method: 'delete'
+    });
+  }
 
   /**
    * @returns {Promise<Array<Destination>>}
