@@ -10,22 +10,20 @@ import {html, createCalendars} from '../utilities.js';
 class EditorView extends View {
   constructor() {
     super();
+
     /**
-     *  @type {Function}
+     * @type {Function}
      */
     this.destroyCalendars = null;
+
     this.addEventListener('click', this.onClick);
     this.addEventListener('change', this.onChange);
     this.addEventListener('submit', this.onSubmit);
     this.addEventListener('reset', this.onReset);
-
-
-    // this.classList.add('class1', 'class2');
   }
 
   connectedCallback() {
     document.addEventListener('keydown', this);
-    // @ts-ignore
   }
 
   disconnectedCallback() {
@@ -36,15 +34,11 @@ class EditorView extends View {
   /**
    * @override
    */
-
   render() {
     this.destroyCalendars?.();
     super.render();
-    this.destroyCalendars = createCalendars(
-      // @ts-ignore
-      ...this.querySelectorAll('.event__input--time')
-    );
-
+    // @ts-ignore
+    this.destroyCalendars = createCalendars(...this.querySelectorAll('.event__input--time'));
   }
 
   /**
@@ -199,13 +193,14 @@ class EditorView extends View {
    */
   createSubmitButtonHtml() {
     const {isSaving} = this.state;
+
     return html`
-    <button
-    class="event__save-btn  btn  btn--blue"
-    type="submit"
-    ${isSaving ? 'disabled' : ''}>
-    ${isSaving ? 'Saving...' : 'Save' }
-  </button>
+      <button
+        class="event__save-btn  btn  btn--blue"
+        type="submit"
+        ${isSaving ? 'disabled' : ''}>
+        ${isSaving ? 'Saving...' : 'Save' }
+      </button>
     `;
   }
 
@@ -217,18 +212,18 @@ class EditorView extends View {
 
     if (id === 'draft') {
       return html`
-          <button class="event__reset-btn" type="reset">Cancel</button>
-        `;
+        <button class="event__reset-btn" type="reset">Cancel</button>
+      `;
     }
 
     return html`
-    <button
-    class="event__reset-btn  btn"
-    type="reset"
-    ${isDeleting ? 'disabled' : ''}>
-    ${isDeleting ? 'Deleting...' : 'Delete'}
-  </button>
-      `;
+      <button
+        class="event__reset-btn  btn"
+        type="reset"
+        ${isDeleting ? 'disabled' : ''}>
+        ${isDeleting ? 'Deleting...' : 'Delete'}
+      </button>
+    `;
   }
 
   /**
@@ -292,7 +287,7 @@ class EditorView extends View {
     const {destinations} = this.state;
     const selectedDestination = destinations.find((destination) => destination.isSelected);
 
-    if (!selectedDestination || !selectedDestination.description){
+    if (!selectedDestination || !selectedDestination.description) {
       return '';
     }
 
@@ -303,7 +298,7 @@ class EditorView extends View {
 
         <div class="event__photos-container">
           <div class="event__photos-tape">
-            ${selectedDestination.pictures?.map((picture) => html`
+            ${selectedDestination.pictures.map((picture) => html`
               <img class="event__photo" src="${picture.src}" alt="${picture.description}">
             `)}
           </div>
@@ -314,30 +309,13 @@ class EditorView extends View {
 
   /**
    * @param {PointerEvent & {
-  *  target: Element
-  * }} event
-  */
+   *  target: Element
+   * }} event
+   */
   onClick(event) {
     if (event.target.closest('.event__rollup-btn')) {
       this.dispatch('close');
     }
-  }
-
-  /**
-   * @param {Event & {
-  *  target: HTMLInputElement
-  * }} event
-  */
-  onChange(event) {
-    this.dispatch('edit', event.target);
-  }
-
-  /**
-   * @param {SubmitEvent} event
- */
-  onSubmit(event) {
-    event.preventDefault();
-    this.dispatch('save');
   }
 
   /**
@@ -350,14 +328,31 @@ class EditorView extends View {
   }
 
   /**
+   * @param {Event & {
+   *   target: HTMLInputElement
+   * }} event
+   */
+  onChange(event) {
+    this.dispatch('edit', event.target);
+  }
+
+  /**
+   * @param {SubmitEvent} event
+   */
+  onSubmit(event) {
+    event.preventDefault();
+    this.dispatch('save');
+  }
+
+  /**
    * @param {Event} event
    */
   onReset(event) {
     const {id} = this.state;
+
     event.preventDefault();
     this.dispatch(id === 'draft' ? 'close' : 'delete');
   }
-
 }
 
 customElements.define('editor-view', EditorView);

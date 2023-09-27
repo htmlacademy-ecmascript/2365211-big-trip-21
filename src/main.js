@@ -18,9 +18,6 @@ import PlaceholderPresenter from './presenters/placeholder-presenter.js';
 import UiBlockerPresenter from './presenters/ui-blocker-presenter.js';
 
 const apiService = new ApiService({authorization: 'Basic sdf123'});
-// apiService.getPoints();
-// apiService.getDestinations();
-// apiService.getOfferGroups();
 
 const appModel = new AppModel(apiService);
 

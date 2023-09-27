@@ -115,7 +115,6 @@ class AppModel extends Model {
    * @returns {Promise<void>}
    */
   async updatePoint(model) {
-  //TODO Обновить данные на сервере
     this.dispatch('busy');
 
     try {
