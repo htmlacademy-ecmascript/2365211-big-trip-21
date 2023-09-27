@@ -170,5 +170,5 @@ export {html,
   createCalendars,
   sanitize,
   formatList,
-  formatDateRange,
+  formatDateRange
 };
