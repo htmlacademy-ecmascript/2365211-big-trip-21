@@ -175,5 +175,3 @@ class CardView extends View {
 }
 customElements.define('card-view', CardView);
 export default CardView;
-
-

@@ -42,7 +42,6 @@ class SortPresenter extends Presenter {
  * }} event
  */
   onViewChange(event) {
-    //console.log(event.target.value);
 
     const params = this.navigation.getParams();
 

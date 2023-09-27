@@ -29,7 +29,6 @@ class ListPresenter extends Presenter {
     const points = this.model.getPoints(params);
     const destinations = this.model.getDestinations();
     const offerGroups = this.model.getOfferGroups();
-    // console.log(points, destinations, offerGroups);
     if (params.edit === 'draft') {
       points.unshift(this.createDraftPoint());
     }
@@ -63,7 +62,6 @@ class ListPresenter extends Presenter {
         isEditable: params.edit === point.id
       };
     });
-    // console.table(points);
 
     this.view.setState({items});
   }
@@ -152,7 +150,6 @@ class ListPresenter extends Presenter {
   onViewEdit(event) {
     const editor = event.target;
     const input = event.detail;
-    //console.log(input.name);
     if (input.name === 'event-type'){
       const offerGroups = this.model.getOfferGroups();
       const {offers} = offerGroups.find((group) => group.type === input.value);
@@ -161,7 +158,6 @@ class ListPresenter extends Presenter {
         isSelected: false
       }));
 
-      //editor.state.offers.find
       editor.state.types.forEach((type) => {
         type.isSelected = type.value === input.value;
       });
@@ -170,7 +166,6 @@ class ListPresenter extends Presenter {
     }
 
     if (input.name === 'event-destination'){
-      // console.log(editor.state.destinations);
       editor.state.destinations.forEach((destination) => {
         destination.isSelected = destination.name === input.value;
       });
@@ -199,7 +194,6 @@ class ListPresenter extends Presenter {
           return true;
         }
       });
-      // console.log(editor.state.offers);
 
     }
   }

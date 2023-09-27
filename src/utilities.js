@@ -38,11 +38,31 @@ function createCalendars(inputFrom, inputTo) {
 }
 
 /**
- * @param {dayjs.ConfigType} value
+ * @param {dayjs.ConfigType} valueFrom
+ * @param {dayjs.ConfigType} valueTo
  * @returns {string}
  */
-function formatDate(value) {
-  return dayjs(value).format('MMM D');
+function formatDateRange(valueFrom, valueTo) {
+  valueFrom = dayjs(valueFrom);
+  valueTo = dayjs(valueTo);
+
+  if (valueFrom.isSame(valueTo, 'day')) {
+    return formatDate(valueFrom);
+  }
+
+  return [
+    formatDate(valueFrom, valueFrom.isSame(valueTo, 'month')),
+    formatDate(valueTo)
+  ].join(' — ');
+}
+
+/**
+ * @param {dayjs.ConfigType} value
+ * @param {boolean} [isNarrow]
+ * @returns {string}
+ */
+function formatDate(value, isNarrow) {
+  return dayjs(value).format(isNarrow ? 'D' : 'D MMM');
 }
 
 /**
@@ -76,13 +96,26 @@ function formatDuration(valueFrom, valueTo) {
   return duration.format('mm[m]');
 }
 
-//console.log(formatDuration('2023-07-15T13:00Z', '2023-08-15T14:00Z'));
 /**
  * @param {number} value
  * @returns {string}
  */
 function formatNumber(value) {
   return value.toLocaleString('en');
+}
+
+/**
+ * @param {Array<string>} items
+ * @returns {string}
+ */
+function formatList(items) {
+  items = structuredClone(items);
+
+  if (items.length > 3) {
+    items.splice(1, items.length - 2, '...');
+  }
+
+  return items.join(' — ');
 }
 
 /**
@@ -134,5 +167,7 @@ export {html,
   formatDuration,
   formatNumber,
   createCalendars,
-  sanitize
+  sanitize,
+  formatList,
+  formatDateRange
 };
