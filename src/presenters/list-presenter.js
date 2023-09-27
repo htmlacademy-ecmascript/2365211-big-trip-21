@@ -92,7 +92,7 @@ class ListPresenter extends Presenter {
     const point = this.model.createPoint();
 
     Object.assign(point, {
-      id: state.id,
+      id: (state.id === 'draft') ? undefined : state.id,
       type: state.types.find((type) => type.isSelected).value,
       destinationId: state.destinations.find((destination) => destination.isSelected)?.id,
       dateFrom: state.dateFrom,
@@ -134,11 +134,14 @@ class ListPresenter extends Presenter {
   async onViewFavorite(event){
     const card = event.target;
 
-    card.state.isFavorite = !card.state.isFavorite;
-    //console.table(card.state);
-    await this.model.updatePoint(this.createPoint(card.state));
-    //console.log(this.createPoint(card.state));
-    card.render();
+    try {
+      card.state.isFavorite = !card.state.isFavorite;
+      await this.model.updatePoint(this.createPoint(card.state));
+      card.render();
+
+    } catch {
+      card.shake();
+    }
   }
 
   /**
@@ -210,13 +213,21 @@ class ListPresenter extends Presenter {
     const editor = event.target;
     const point = this.createPoint(editor.state);
 
-    if (editor.state.id === 'draft') {
-      await this.model.addPoint(point);
-    } else {
-      await this.model.updatePoint(point);
+    try {
+      editor.setState({isSaving: true});
+
+      if (editor.state.id === 'draft') {
+        await this.model.addPoint(point);
+      } else {
+        await this.model.updatePoint(point);
+      }
+      editor.dispatch('close');
+
+    } catch {
+      editor.setState({isSaving: false});
+      editor.shake();
     }
   }
-
 
   /**
    * @param {CustomEvent & {
@@ -225,9 +236,15 @@ class ListPresenter extends Presenter {
   */
   async onViewDelete(event) {
     const editor = event.target;
+    try {
+      editor.setState({isDeleting: true});
+      await this.model.deletePoint(editor.state.id);
+      editor.dispatch('close');
 
-    await this.model.deletePoint(editor.state.id);
-    editor.dispatch('close');
+    } catch {
+      editor.setState({isDeleting: false});
+      editor.shake();
+    }
   }
 
 }
